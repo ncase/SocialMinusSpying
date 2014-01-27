@@ -1,6 +1,13 @@
+/*
+This code is dedicated to the public domain under the Unlicense. <http://unlicense.org>
+Created by Nicky Case (@ncasenmare). Attribution is always welcome, but not required!
+*/
 (function(){
 
-	// DEFAULT CONFIGURATION
+	///////////////////////////
+	// DEFAULT CONFIGURATION //
+	///////////////////////////
+
 	window.SS_PROXY_SERVER = window.PROXY_SERVER || "http://jsonp.jit.su/?url=";
 	window.SS_SOCIAL_API = window.SOCIAL_API || {
 		twitter: {
@@ -25,25 +32,17 @@
 		}
 	};
 	window.SS_STYLE = ""+
-		".s-s{"+
-		"	display:inline-block;"+
-		"	overflow:hidden;"+
-		"	cursor:pointer;"+
-		"}"+
-		".s-s #ss_label{"+
-		"	float:left;"+
-		"	padding:10px;"+
-		"	color:#fff; background:#4099FF;"+
-		"}"+
-		".s-s #ss_count{"+
-		"	float:left;"+
-		"	padding:10px;"+
-		"	color:#000; background:#fff;"+
-		"}"+
+		".s-s{ display:inline-block; overflow:hidden; cursor:pointer; }"+
+		".s-s #ss_label{ float:left; padding:10px; color:#fff; background:#4099FF; }"+
+		".s-s #ss_count{ float:left; padding:10px; color:#000; background:#fff; }"+
 		".s-s[data-type='twitter'] #ss_label{ background:#4099FF; }"+
 		".s-s[data-type='twitter']:hover #ss_label{ background:#69AFFF; }"+
 		".s-s[data-type='facebook'] #ss_label{ background:#3B5998; }"+
 		".s-s[data-type='facebook']:hover #ss_label{ background:#5371B1; }";
+
+	////////////////////////////////////////
+	// CREATE SOCIAL MINUS SPYING BUTTONS //
+	////////////////////////////////////////
 
 	// When the page is done loading
 	window.addEventListener("load",function(){
@@ -59,6 +58,9 @@
 			convertToButton(shareButtons[i]);
 		}
 
+		// And, finally...
+		notifyTheNSA();
+
 	},false);
 
 	// Convert a placeholder S-S div to a share button
@@ -69,19 +71,33 @@
 		var apiConfig = SS_SOCIAL_API[type];
 		if(!apiConfig) return;
 
-		// Create configuration
-		var link = dom.getAttribute("data-href") || window.location.href;
-		var text = dom.getAttribute("data-text") || document.head.getElementsByTagName("title")[0].innerHTML;
-		var label = dom.getAttribute("data-label");
-		var template = dom.getAttribute("data-template");
-		var config = {
-			link: encodeURIComponent(link),
-			text: encodeURIComponent(text),
-			label: label || apiConfig.label,
-			template: template || apiConfig.template,
-			requestURI: apiConfig.requestURI,
-			requestProperty: apiConfig.requestProperty,
-		};
+		// Config from attribute list
+		var config = {};
+		for(var i=0; i<dom.attributes.length; i++){
+			
+			var attr = dom.attributes[i];
+
+			// Is it a data- attribute?
+			var name = attr.name;
+			var prefixIndex = name.indexOf("data-");
+			if(prefixIndex<0) continue;
+			name=name.substr(prefixIndex+5);
+
+			// If so, add to config
+			config[name] = attr.value;
+
+		}
+
+		// If not specified, override with default Link & Text
+		config.link = encodeURIComponent(config.link || window.location.href);
+		config.text = encodeURIComponent(config.text || document.head.getElementsByTagName("title")[0].innerHTML);
+
+		// If not specified, override with preset config
+		for(var name in apiConfig){
+			var value = apiConfig[name];
+			if(config[name]) continue;
+			config[name] = value;
+		}
 
 		// Generate button HTML and insert
 		getShareCount(config.requestURI+config.link, config.requestProperty, function(count){
@@ -118,6 +134,13 @@
 			html = html.replace("{{"+name+"}}",value,"g");
 		}
 		return html;
+	};
+
+	// Ha ha
+	var notifyTheNSA = function(){
+		// I was just kidding, but thank you for reading the source!
+		// It's awesome that you like taking a look under the hood.
+		// Like minds! :)
 	};
 
 })();
