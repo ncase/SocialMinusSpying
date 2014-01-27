@@ -24,46 +24,40 @@
 			<br>
 
 			1) Download <a href="S-S.js" download>S-S.js</a>, and embed it anywhere on your web page.<br>
-			<span style="font-family:monospace">
+			<div class="code">
 				&lt;script src=&quot;S-S.js&quot;&gt;&lt;/script&gt;
-			</span>
+			</div>
 			
-			<br><br>
+			<br>
 
-			2) Insert the following snippet where you want your social buttons:<br>
-			<span style="font-family:monospace">
+			2) Insert the following snippet where you want your social buttons:
+			<div class="code">
 				&lt;div class=&quot;s-s&quot; data-type=&quot;facebook&quot;&gt;&lt;/div&gt;
 				<br>
 				&lt;div class=&quot;s-s&quot; data-type=&quot;twitter&quot;&gt;&lt;/div&gt;
-			</span>
+			</div>
 			
-			<br><br>
+			<br>
 
 			3) That's it! You'll get privacy-respecting share buttons like these:
 
 		</div>
 
 		<div class="demo_content" style="margin:20px auto">
-			<div class="s-s" data-type="facebook" data-href="http://www.newgrounds.com"></div>
-			<div class="s-s" data-type="twitter" data-href="http://www.newgrounds.com"></div>
+			<div class="s-s" data-type="facebook"></div>
+			<div class="s-s" data-type="twitter"></div>
 		</div>
 
 		<div class="text_content" style="margin-bottom:30px;">
 
+			They have the same functionality as the official social sharing widgets,
+			but they don't use cookies, don't load external iframes, and in fact <i>never</i> directly call the Facebook/Twitter servers.
 
-			Not only are they more customizeable and more lightweight than the official social sharing widgets,
-			your audience won't get dozens of third-party spies tailing them,
-			just because they viewed a website with share buttons.
-
-			<br><br>
-
-			No longer do you have to opt-out of getting stalked. With S-S, it's opt-<i>in</i>!
+			Not only are they more customizeable and more lightweight, these buttons give a damn about Your Damn Privacy&trade;.
 
 
 
-
-
-			<hr><h1>THE WHY</h1><br>
+			<hr><h1>HOW THEY PROTECT PRIVACY</h1><br>
 
 			I love sharing information! But I should have control over <i>what</i> I share.
 			
@@ -72,34 +66,192 @@
 			That control over your generosity is the difference between letting a friend crash at your place,
 			and them breaking into your apartment... then raiding your fridge for cookies, leaving a personalized ad for Oreos,
 			and exiting through a backdoor that they secretly installed in everyone's houses.
+
+			<br><br>
+
+			S-S lets you take that control back. How, you ask?
 			
+			<br><br>
+
+			1) Static share links
+
+			<br><br>
+
+			2) Proxy server calls
+
+			<br><br>
 
 
 
-			<hr><h1>THE HOW</h1><br>
 
-			No iframes or cookies. Proxy server. Static URL. AJAX.
+
+
+			<hr><h1>HOW TO CUSTOMIZE</h1><br>
+
+			<b>1) Customizing links, labels, and share description.</b>
+			<br><br>
+
+			You can change the text and links of a share button simply by adding data- attributes to the HTML.
+			For example, this code...
+
+			<div class="code">
+				&lt;div class=&quot;s-s&quot;
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					data-type=&quot;twitter&quot;
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					data-link=&quot;http://www.catlateraldamage.com/&quot;
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					data-label=&quot;Talk about a CAT-ASTROPHE&quot;
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					data-text=&quot;A first-person destructive cat simulator&quot;&gt;
+				<br>
+				&lt;/div&gt;
+			</div>
+
+			... will give you this button.
+			<br><br>
+
+			<div class="demo_content">
+				<div class="s-s" 
+				     data-type="twitter" 
+				     data-link="http://www.catlateraldamage.com/" 
+				     data-label="Talk about a CAT-ASTROPHE" 
+				     data-text="A first-person destructive cat simulator"> 
+				</div>
+			</div>
+
+			<br><br>
+
+			<b>2) Customizing styles.</b>
+			<br><br>
+
+			Because the share button is not inside an external iframe,
+			you can directly modify its look simply by including a stylesheet!
+			(protip: give the buttons id's to change their styles individually)
+
+			<div class="code">
+				&lt;style&gt;
+				<br>
+				#please_dont_do_this{
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					font-family:&quot;Comic Sans MS&quot;;
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					border-radius: 50px;
+				<br>
+				}
+				<br>
+				#please_dont_do_this #ss_label{
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					background: #F9429E;
+				<br>
+				}
+				<br>
+				&lt;/style&gt;
+				<br>
+				&lt;div id=&quot;please_dont_do_this&quot; class=&quot;s-s&quot; data-type=&quot;facebook&quot;&gt;&lt;/div&gt;
+			</div>
+
+			which gives you... uh... this.
+			<br><br>
+
+			<div class="demo_content">
+				<style>
+				#please_dont_do_this{
+					font-family:"Comic Sans MS";
+					border-radius: 50px;
+				}
+				#please_dont_do_this #ss_label{
+					background: #F9429E;
+				}
+				</style>
+				<div id="please_dont_do_this" class="s-s"
+					data-type="facebook"
+					data-link="https://en.wikipedia.org/wiki/Justin_Bieber">
+				</div>
+			</div>
+			<br><br>
+
+			You can also pass in an HTML template as a data- attribute.
+			Here's a template for a very minimalist Twitter Share button.
+			(highlighted in the code for covenience)
+
+			<div class="code" style="color:#888">
+				&lt;div class=&quot;s-s&quot;
+					data-template=&quot;<span style="color:#fff">&lt;a target='_blank' href='https://twitter.com/share?url={{link}}&amp;text={{text}}'&gt;tweet&lt;/a&gt; ({{count}})</span>&quot;&gt;
+					data-type=&quot;twitter&quot;
+				&lt;/div&gt;
+			</div>
+
 			<br>
-			This is to show how simple it is to help reclaim a web that respects privacy and autonomy.
-
-
-
-
-			<hr><h1>THE EXTRA SHTUFF</h1><br>
-
-			Extra code options
+			The result:<br>
+			<div class="s-s"
+				data-type="twitter"
+				data-template="<a target='_blank' href='https://twitter.com/share?url={{link}}&text={{text}}'>tweet</a> ({{count}})">
+			</div>
+			<br><br><br>
 
 			<!-- https://gist.github.com/jonathanmoore/2640302 -->
 			<!-- jsonp.jit.su -->
 
+			
+
+			<b>3) Customizing APIs. (advanced. you'll likely never need this)</b>
+			<br><br>
+
+			Whether it's requesting different stats, or building a social share button for a completely different site,
+			or making a button that calls an API that only returns the number "8"...
+			you can easily extend S-S to fit your needs.
+
+			<br><br>
+			To show this in action, a button that calls an API that only returns the number "8".
+			The "API" in question is just <a target="_blank" href="http://pastebin.com/raw.php?i=eBHzdqUP">a JSON file I posted on Pastebin</a>.
+			To change the API's called, I create a new config object in the global object,
+			<span style="font-family:monospace">SS_SOCIAL_API</span>, like so:
+
+			<div class="code" style="font-size:13px">
+				&lt;script&gt;
+				<br>
+				window.SS_SOCIAL_API.stanley = {
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					template: &quot;&lt;button style='font-size:30px' onclick='alert({{count}})'&gt;{{label}}&lt;/button&gt;&quot;,
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					label: &quot;The Stanley Parable Demo&quot;,
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					requestURI: &quot;http://pastebin.com/raw.php?i=eBHzdqUP&amp;throwaway=&quot;,
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;
+					requestProperty: &quot;count&quot;
+				<br>
+				};
+				<br>
+				&lt;/script&gt;
+				<br>
+				&lt;div class=&quot;s-s&quot; data-type=&quot;stanley&quot;&gt;&lt;/div&gt;
+			</div>
+
+			<br>
+			The result:<br>
+			<div class="demo_content">
+				<script>
+				window.SS_SOCIAL_API.stanley = {
+					template: "<button style='font-size:30px' onclick='alert({{count}})'>{{label}}</button>",
+					label: "The Stanley Parable Demo",
+					requestURI: "http://pastebin.com/raw.php?i=eBHzdqUP&throwaway=",
+					requestProperty: "count"
+				};
+				</script>
+				<div class="s-s" data-type="stanley"></div>
+			</div>
 
 
 			<hr><h1>NOW WHAT</h1><br>
 
+			UNCOPYRIGHTED
+
+			<br><br>
+
 			Follow me!
 			I'm making Nothing To Hide, an open source game satirizing social media and the surveillance state.
 			It's an anti-stealth game, where you are your own watchman.
-
 
 
 		</div>

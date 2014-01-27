@@ -15,18 +15,23 @@ hr{
 	border:none;
 	border-top: 2px dashed #bbb;
 }
+a{
+	color:#CC2727;
+}
 
 #title{
-	width:800px;
+	width:100%;
 	margin:0 auto;
+	letter-spacing: 1px;
 }
 #title h1{
 	margin: 0;
 	text-align: center;
 	font-size: 70px;
+	letter-spacing: 3px;
 }
 .text_content{
-	width:700px; 
+	width:800px; 
 	margin: 0 auto;
 	font-size:20px; font-family:sans-serif; font-weight:100;
 }
@@ -36,7 +41,18 @@ hr{
 	font-size: 50px;
 }
 .demo_content{
-	width:800px; 
+	width:100%;
 	margin: 0 auto;
 	text-align:center;
+	font-family: Raleway;
+	font-size: 30px;
+}
+.code{
+	font-family: monospace;
+	margin:10px;
+	background: #555;
+	color:#fff;
+	padding: 10px;
+	border-radius: 10px;
+	font-size: 18px;
 }
