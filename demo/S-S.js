@@ -72,6 +72,11 @@
 			if(xhr.readyState===4 && xhr.status===200){
 				var response = JSON.parse(xhr.responseText);
 				var count = response[property] || 0;
+				if(count>10000){
+					count = Math.round(count/1000)+"K";
+				}else if(count>1000){
+					count = ((Math.round(count/100)*100)/1000)+"K";
+				}
 				callback(count);
 			}
 		};
