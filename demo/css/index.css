@@ -41,9 +41,11 @@ a{
 	font-size: 50px;
 }
 .demo_content{
-	width:960px; 
+	width:100%;
 	margin: 0 auto;
 	text-align:center;
+	font-family: Raleway;
+	font-size: 30px;
 }
 .code{
 	font-family: monospace;
@@ -52,4 +54,5 @@ a{
 	color:#fff;
 	padding: 10px;
 	border-radius: 10px;
+	font-size: 18px;
 }

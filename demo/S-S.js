@@ -8,8 +8,8 @@ Created by Nicky Case (@ncasenmare). Attribution is always welcome, but not requ
 	// DEFAULT CONFIGURATION //
 	///////////////////////////
 
-	window.SS_PROXY_SERVER = window.PROXY_SERVER || "http://jsonp.jit.su/?url=";
-	window.SS_SOCIAL_API = window.SOCIAL_API || {
+	window.SS_PROXY_SERVER = "http://jsonp.jit.su/?url=";
+	window.SS_SOCIAL_API = {
 		twitter: {
 			template:
 				"<div onclick='window.open(\"https://twitter.com/share?url={{link}}&text={{text}}\",\"_blank\")'>"+
@@ -44,9 +44,9 @@ Created by Nicky Case (@ncasenmare). Attribution is always welcome, but not requ
 	// CREATE SOCIAL MINUS SPYING BUTTONS //
 	////////////////////////////////////////
 
-	// When the page is done loading
+	// Initialize S-S only after the rest of the page loads
 	window.addEventListener("load",function(){
-
+	
 		// Add stylesheet to top
 		var style = document.createElement("style");
 		style.innerHTML = SS_STYLE;
@@ -136,7 +136,7 @@ Created by Nicky Case (@ncasenmare). Attribution is always welcome, but not requ
 		return html;
 	};
 
-	// Ha ha
+	// ha ha
 	var notifyTheNSA = function(){
 		// I was just kidding, but thank you for reading the source!
 		// It's awesome that you like taking a look under the hood.
