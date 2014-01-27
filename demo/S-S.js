@@ -1,6 +1,6 @@
 (function(){
 
-	// CONFIGURATION
+	// DEFAULT CONFIGURATION
 	window.SS_PROXY_SERVER = window.PROXY_SERVER || "http://jsonp.jit.su/?url=";
 	window.SS_SOCIAL_API = window.SOCIAL_API || {
 		twitter: {
@@ -24,14 +24,43 @@
 			requestProperty: "shares"
 		}
 	};
+	window.SS_STYLE = ""+
+		".s-s{"+
+		"	display:inline-block;"+
+		"	overflow:hidden;"+
+		"	cursor:pointer;"+
+		"}"+
+		".s-s #ss_label{"+
+		"	float:left;"+
+		"	padding:10px;"+
+		"	color:#fff; background:#4099FF;"+
+		"}"+
+		".s-s #ss_count{"+
+		"	float:left;"+
+		"	padding:10px;"+
+		"	color:#000; background:#fff;"+
+		"}"+
+		".s-s[data-type='twitter'] #ss_label{"+
+		"	background:#4099FF;"+
+		"}"+
+		".s-s[data-type='facebook'] #ss_label{"+
+		"	background:#3B5998;"+
+		"}";
 
 	// When the page is done loading
 	window.addEventListener("load",function(){
+
+		// Add stylesheet to top
+		var style = document.createElement("style");
+		style.innerHTML = SS_STYLE;
+		document.head.appendChild(style);
+
 		// Convert all S-S divs to share buttons
 		var shareButtons = document.querySelectorAll(".s-s");
 		for(var i=0;i<shareButtons.length;i++){
 			convertToButton(shareButtons[i]);
 		}
+
 	},false);
 
 	// Convert a placeholder S-S div to a share button
