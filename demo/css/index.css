@@ -10,8 +10,33 @@ body{
 	font-family: Raleway;
 	font-size: 30px;
 }
-h1{
+hr{
+	margin:40px 0;
+	border:none;
+	border-top: 2px dashed #bbb;
+}
+
+#title{
+	width:800px;
+	margin:0 auto;
+}
+#title h1{
 	margin: 0;
 	text-align: center;
 	font-size: 70px;
+}
+.text_content{
+	width:700px; 
+	margin: 0 auto;
+	font-size:20px; font-family:sans-serif; font-weight:100;
+}
+.text_content h1{
+	margin: 0;
+	font-family: Raleway;
+	font-size: 50px;
+}
+.demo_content{
+	width:800px; 
+	margin: 0 auto;
+	text-align:center;
 }

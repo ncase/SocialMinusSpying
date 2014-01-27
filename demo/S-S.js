@@ -40,12 +40,10 @@
 		"	padding:10px;"+
 		"	color:#000; background:#fff;"+
 		"}"+
-		".s-s[data-type='twitter'] #ss_label{"+
-		"	background:#4099FF;"+
-		"}"+
-		".s-s[data-type='facebook'] #ss_label{"+
-		"	background:#3B5998;"+
-		"}";
+		".s-s[data-type='twitter'] #ss_label{ background:#4099FF; }"+
+		".s-s[data-type='twitter']:hover #ss_label{ background:#69AFFF; }"+
+		".s-s[data-type='facebook'] #ss_label{ background:#3B5998; }"+
+		".s-s[data-type='facebook']:hover #ss_label{ background:#5371B1; }";
 
 	// When the page is done loading
 	window.addEventListener("load",function(){
