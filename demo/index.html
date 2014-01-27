@@ -4,7 +4,7 @@
 	<head>
 		<title>Social Minus Spying</title>
 		<link href='css/index.css' rel='stylesheet' type='text/css'>
-		<script src="js/S-S.js"></script>
+		<script src="S-S.js"></script>
 	</head>
 	<body>
 
@@ -20,52 +20,48 @@
 		<!-- https://gist.github.com/jonathanmoore/2640302 -->
 		<!-- jsonp.jit.su -->
 
-		<div style="width:800px; margin:0 auto">
-			
-			<div class="s-s"
-				data-href="http://ncase.github.io/SocialMinusSpying"
-				data-text="Social Minus Spying by @ncasenmare - social sharing buttons that respect your damn privacy."
-				data-type="twitter">
-			</div>
-			<div class="s-s"
-				data-href="http://www.newgrounds.com"
-				data-text="Newgrounds - problems of the future, today!"
-				data-label="Tweet Newgrounds"
-				data-type="twitter">
-			</div>
-			<div class="s-s"
-				data-href="https://github.com"
-				data-text="githug"
-				data-label="Tweet Github"
-				data-type="twitter"
-				data-template="<a href='https://twitter.com/share?url={{link}}&text={{text}}' target='_blank'>{{label}}</a> - - - {{count}}">
-			</div>
+		<div style="width:800px; margin:30px auto; text-align:center">
 
-			<div class="s-s"
-				data-href="http://ncase.github.io/SocialMinusSpying"
-				data-text="Social Minus Spying by @ncasenmare - social sharing buttons that respect your damn privacy."
-				data-type="facebook">
-			</div>
-			<div class="s-s"
-				data-href="http://www.newgrounds.com"
-				data-text="Newgrounds - problems of the future, today!"
-				data-label="Facebook Newgrounds"
-				data-type="facebook">
-			</div>
-			<div class="s-s"
-				data-href="https://github.com"
-				data-text="githug"
-				data-label="Facebook Github"
-				data-type="facebook">
-			</div>
+			<style>
+			.s-s{
+				display:inline-block;
+				overflow:hidden;
+				cursor:pointer;
+			}
+			.s-s #ss_label{
+				float:left;
+				padding:10px;
+				color:#fff; background:#4099FF;
+				padding-top:15px;
+			}
+			.s-s #ss_count{
+				float:left;
+				padding:10px;
+				color:#000; background:#fff;
+				padding-top:15px;
+			}
+			.s-s[data-type="twitter"] #ss_label{
+				background:#4099FF;
+			}
+			.s-s[data-type="facebook"] #ss_label{
+				background:#3B5998;
+			}
+			</style>
+
+			<div class="s-s" data-type="facebook"></div>
+			<div class="s-s" data-type="twitter"></div>
 
 		</div>
 
 		<div style="width:700px; margin:0 auto">
 
 			<p style="font-size:20px; font-family:sans-serif; font-weight:100">
-				I love sharing information! But I still should have control over <i>what</i> I share.
-				That control is the difference between being generous and being robbed.
+				I love sharing information! But I should have control over <i>what</i> I share.
+				<br>
+				<br>
+				That control over your generosity is the difference between letting a friend crash at your place,
+				and them breaking into your apartment... then raiding your cookie jar, leaving a personalized ad for Oreos,
+				and exiting through a backdoor that they secretly installed in everyone's houses.
 				<br>
 				<br>
 				<b>Social Minus Spying</b> gives the functionality of a Facebook/Twitter/Whatever button,
