@@ -48,6 +48,7 @@ a{
 	font-size: 30px;
 }
 .code{
+	width: 100%;
 	font-family: monospace;
 	margin:10px;
 	background: #555;
