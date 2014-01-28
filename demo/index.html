@@ -12,9 +12,20 @@ GO LOOK AT THAT INSTEAD
 
 <html>
 	<head>
+
 		<title>Social Minus Spying</title>
 		<link href='css/index.css' rel='stylesheet' type='text/css'>
+
+		<meta property="og:title" content="Social Minus Spying"/>
+		<meta property="og:description" content="Open-source sharing buttons that respect your damn privacy."/>
+		<meta property="og:image" content="img/thumbnail.png"/>
+
+		<meta name="twitter:title" content="Social Minus Spying"/>
+		<meta name="twitter:description" content="Open-source sharing buttons that respect your damn privacy."/>
+		<meta name="twitter:image" content="img/thumbnail.png"/>
+
 		<script src="S-S.js"></script>
+		
 	</head>
 	<body>
 
@@ -176,9 +187,6 @@ GO LOOK AT THAT INSTEAD
 			</div>
 			<br><br><br>
 
-			<!-- https://gist.github.com/jonathanmoore/2640302 -->
-			<!-- jsonp.jit.su -->
-
 			
 
 			<b>3) Customizing APIs.</b>
@@ -253,9 +261,9 @@ window.SS_SOCIAL_API.stanley = {
 			<br><br>
 
 			S-S protects your privacy by calling these APIs through a proxy server.
-			This way, they can't even log your IP address!
+			(In fact, it <i>has</i> to, because of <a target="_blank" href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> issues when it comes to AJAX)
 			By default, S-S uses the open source <a href="http://jsonp.jit.su/" target="_blank">JSONProxy</a>,
-			and if you want, you can easily customize S-S to use a different <a target="_blank" href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> proxy:
+			and if you want, you can easily customize S-S to use a different proxy:
 
 <textarea class="code" style="height:70px">
 <script>
@@ -319,8 +327,7 @@ window.addEventListener("load",function(){
 	// And, finally...
 	notifyTheNSA();
 
-},false);
-</textarea>
+},false);</textarea>
 
 			Yup. Nothing suspicious there.
 

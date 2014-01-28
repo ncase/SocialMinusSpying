@@ -53,7 +53,7 @@ Created by Nicky Case (@ncasenmare). Attribution is always welcome, but not requ
   		var y = (screen.height/2)-(h/2);
 
 		var popupConfig = "width="+w+",height="+h+",left="+x+",top="+y+",";
-		popupConfig += "resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes";
+		popupConfig += "resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes";
 		window.open(url,"popup",popupConfig);
 
 	};
