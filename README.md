@@ -99,7 +99,9 @@ To see how many times a link has been shared, you can call the Facebook/Twitter 
 Twitter - [urls.api.twitter.com/1/urls/count.json?url={{URL}}](http://urls.api.twitter.com/1/urls/count.json?url=https://www.youtube.com/watch?v=vtkGtXtDlQA)    
 Facebook - [graph.facebook.com/?id={{URL}}](http://graph.facebook.com/?id=https://www.youtube.com/watch?v=vtkGtXtDlQA)
 
-S-S protects your privacy by calling these APIs through a proxy server. This way, they can't even log your IP address! By default, S-S uses the open source JSONProxy, and if you want, you can easily customize S-S to use a different CORS proxy:
+S-S protects your privacy by calling these APIs through a proxy server. This way, they can't even log your IP address!
+By default, S-S uses the open source [JSONProxy](http://jsonp.jit.su/), and if you want,
+you can easily customize S-S to use a different [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) proxy:
 
 	<script> window.SS_PROXY_SERVER = "http://{{ALTERNATIVE_CORS_PROXY}}/?url="; </script>
 
