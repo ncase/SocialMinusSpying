@@ -12,7 +12,7 @@ Created by Nicky Case (@ncasenmare). Attribution is always welcome, but not requ
 	window.SS_SOCIAL_API = {
 		twitter: {
 			template:
-				"<div onclick='window.open(\"https://twitter.com/share?url={{link}}&text={{text}}\",\"_blank\")'>"+
+				"<div onclick='window.SS_POPUP(\"https://twitter.com/share?url={{link}}&text={{text}}\",\"twitter\")'>"+
 				"	<div id='ss_label'>{{label}}</div>"+
 				"	<div id='ss_count'>{{count}}</div>"+
 				"</div>",
@@ -22,7 +22,7 @@ Created by Nicky Case (@ncasenmare). Attribution is always welcome, but not requ
 		},	
 		facebook: {
 			template:
-				"<div onclick='window.open(\"https://www.facebook.com/sharer/sharer.php?u={{link}}&t={{text}}\",\"_blank\")'>"+
+				"<div onclick='window.SS_POPUP(\"https://www.facebook.com/sharer/sharer.php?u={{link}}&t={{text}}\",\"facebook\")'>"+
 				"	<div id='ss_label'>{{label}}</div>"+
 				"	<div id='ss_count'>{{count}}</div>"+
 				"</div>",
@@ -39,6 +39,24 @@ Created by Nicky Case (@ncasenmare). Attribution is always welcome, but not requ
 		".s-s[data-type='twitter']:hover #ss_label{ background:#69AFFF; }"+
 		".s-s[data-type='facebook'] #ss_label{ background:#3B5998; }"+
 		".s-s[data-type='facebook']:hover #ss_label{ background:#5371B1; }";
+
+	// A helper for popup windows
+	window.SS_POPUP = function(url,type){
+
+		var w,h;
+		switch(type){
+			case "twitter": w=550; h=500; break;
+			case "facebook": w=670; h=400; break;
+			default: w=500; h=500; break;
+		}
+		var x = (screen.width/2)-(w/2);
+  		var y = (screen.height/2)-(h/2);
+
+		var popupConfig = "width="+w+",height="+h+",left="+x+",top="+y+",";
+		popupConfig += "resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes";
+		window.open(url,"popup",popupConfig);
+
+	};
 
 	////////////////////////////////////////
 	// CREATE SOCIAL MINUS SPYING BUTTONS //

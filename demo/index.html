@@ -5,7 +5,8 @@
 OH GOD THIS HTML CODE IS ABSOLUTE CRAP
 PLEASE DON'T JUDGE MY CODING ABILITY BY THIS
 
-I SWEAR THE S-S.js LIBRARY IS MUCH BETTER, GO LOOK AT THAT INSTEAD
+I SWEAR THE S-S.js LIBRARY IS MUCH BETTER
+GO LOOK AT THAT INSTEAD
 
 -->
 
@@ -51,7 +52,7 @@ I SWEAR THE S-S.js LIBRARY IS MUCH BETTER, GO LOOK AT THAT INSTEAD
 
 		<div class="demo_content" style="margin:20px auto">
 			<div class="s-s" data-type="facebook"></div>
-			<div class="s-s" data-type="twitter"></div>
+			<div class="s-s" data-type="twitter"  data-text="Social Minus Spying by @ncasenmare. Open-source sharing buttons that respect your damn privacy."></div>
 		</div>
 
 		<div class="text_content" style="margin-bottom:30px;">
@@ -91,7 +92,7 @@ I SWEAR THE S-S.js LIBRARY IS MUCH BETTER, GO LOOK AT THAT INSTEAD
 <div class="s-s" 
      data-type="twitter" 
      data-link="http://www.catlateraldamage.com/" 
-     data-label="Talk about a CAT-ASTROPHE" 
+     data-label="you've cat to be kitten me right meow" 
      data-text="A first-person destructive cat simulator"> 
 </div>
 </textarea>
@@ -103,7 +104,7 @@ I SWEAR THE S-S.js LIBRARY IS MUCH BETTER, GO LOOK AT THAT INSTEAD
 				<div class="s-s" 
 				     data-type="twitter" 
 				     data-link="http://www.catlateraldamage.com/" 
-				     data-label="Talk about a CAT-ASTROPHE" 
+				     data-label="you've cat to be kitten me right meow" 
 				     data-text="A first-person destructive cat simulator"> 
 				</div>
 			</div>
@@ -124,12 +125,12 @@ I SWEAR THE S-S.js LIBRARY IS MUCH BETTER, GO LOOK AT THAT INSTEAD
 	border-radius: 50px;
 }
 #please_dont_do_this #ss_label{
-	background: #F9429E;
+	background: url(img/rainbow.png);
 }
 </style>
 <div id="please_dont_do_this" class="s-s"
 	data-type="facebook"
-	data-link="https://en.wikipedia.org/wiki/Justin_Bieber">
+	data-link="http://zombo.com/">
 </div>
 </textarea>
 
@@ -143,12 +144,12 @@ I SWEAR THE S-S.js LIBRARY IS MUCH BETTER, GO LOOK AT THAT INSTEAD
 					border-radius: 50px;
 				}
 				#please_dont_do_this #ss_label{
-					background: #F9429E;
+					background: url(img/rainbow.png);
 				}
 				</style>
 				<div id="please_dont_do_this" class="s-s"
 					data-type="facebook"
-					data-link="https://en.wikipedia.org/wiki/Justin_Bieber">
+					data-link="http://zombo.com/">
 				</div>
 			</div>
 			<br><br>
@@ -180,7 +181,7 @@ I SWEAR THE S-S.js LIBRARY IS MUCH BETTER, GO LOOK AT THAT INSTEAD
 
 			
 
-			<b>3) Customizing APIs. (advanced. you'll likely never need this)</b>
+			<b>3) Customizing APIs.</b>
 			<br><br>
 
 			Whether it's requesting different stats, or building a social share button for a completely different site,
@@ -236,40 +237,29 @@ window.SS_SOCIAL_API.stanley = {
 
 
 
-			<hr><h1>HOW IT WORKS</h1><br>
-
-			I'll be the first to admit, S-S isn't particularly complicated or clever or new.
-			But that's <i>exactly</i> the point. It doesn't take that much extra effort to make the web a safer place,
-			so we developers should do whatever we can to help, no matter how small.
-			
-			<br><br>
-
-			That's why I wanted to make S-S. And here's how it protects your privacy.
-			
-			<br><br>
+			<hr><h1>HOW IT PROTECTS PRIVACY</h1><br>
 
 			<b>1) Proxy server calls</b>
 
 			<br><br>
 
-			If you want to know how many times a given link has been Shared/Tweeted,
-			you can call the Facebook/Twitter APIs like so. (click links for example API calls)
+			To see how many times a link has been shared, you can call the Facebook/Twitter APIs.
 			<br><br>
-			Twitter: <a target="_blank" href="http://urls.api.twitter.com/1/urls/count.json?url=https://www.youtube.com/watch?v=vtkGtXtDlQA">
+			Twitter - <a target="_blank" href="http://urls.api.twitter.com/1/urls/count.json?url=https://www.youtube.com/watch?v=vtkGtXtDlQA">
 				http://urls.api.twitter.com/1/urls/count.json?url={{URL}}</a>
 			<br>
-			Facebook: <a target="_blank" href="http://graph.facebook.com/?id=https://www.youtube.com/watch?v=vtkGtXtDlQA">
+			Facebook - <a target="_blank" href="http://graph.facebook.com/?id=https://www.youtube.com/watch?v=vtkGtXtDlQA">
 				http://graph.facebook.com/?id={{URL}}</a>
 			<br><br>
 
 			S-S protects your privacy by calling these APIs through a proxy server.
 			This way, they can't even log your IP address!
-			By default, S-S uses <a href="http://jsonp.jit.su/" target="_blank">JSONProxy</a>. (open source, so you can run your own JSONProxy)
-			If you want, you can easily customize S-S to use a different CORS proxy:
+			By default, S-S uses the open source <a href="http://jsonp.jit.su/" target="_blank">JSONProxy</a>,
+			and if you want, you can easily customize S-S to use a different <a target="_blank" href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> proxy:
 
 <textarea class="code" style="height:70px">
 <script>
-window.SS_PROXY_SERVER = "http://{{ALTERNATIVE_PROXY_URL}}/?url=";
+window.SS_PROXY_SERVER = "http://{{ALTERNATIVE_CORS_PROXY}}/?url=";
 </script></textarea>
 
 			<br><br>
@@ -278,10 +268,16 @@ window.SS_PROXY_SERVER = "http://{{ALTERNATIVE_PROXY_URL}}/?url=";
 
 			<br><br>
 
-			These static links go to sharing pages for Twitter/Facebook.
-			Just a simple hyperlink.
-			No external iframe'd buttons. No Javascript libraries.
-			No way it can track you just by simply <i>being</i> on the web page.
+			The standard sharing widgets load up external iframes and set cookies in your browser,
+			<i>simply by being on the web page</i>. Even if you never click to share.
+			Even if you're not logged in. Even if you don't have an account.
+			Yeesh, if companies are people, these peeps need a restraining order against them.
+
+			<br><br>
+
+			In contrast, the <i>one and only time</i> S-S will load up Facebook/Twitter is when you explicitly click to share on Facebook/Twitter.
+			Otherwise, it remains static, and cannot track you.
+			When you want to share, S-S opens a popup to these links:
 
 			<br><br>
 			Twitter: <a target="_blank" href="https://twitter.com/share?url=https://www.youtube.com/watch?v=vtkGtXtDlQA&text=The sequel to Don't Hug Me I'm Scared? It's about TIME!">
@@ -291,7 +287,12 @@ window.SS_PROXY_SERVER = "http://{{ALTERNATIVE_PROXY_URL}}/?url=";
 				https://www.facebook.com/sharer/sharer.php?u={{link}}&t={{text}}</a>
 			<br><br>
 
-			If you don't care about Share Counts, you can avoid using S-S altogether and just use these links by themselves.
+			If you don't care about Share Counts or having a popup, you can avoid using S-S altogether and just use these links by themselves:
+
+<textarea class="code" style="font-size:16px; height:50px">
+<a href="https://twitter.com/share?url=http://dmatthams.co.uk/gwd/&text=Wowwee, this was made in Google Web Designer!" target="_blank">Tweet about GWD</a></textarea>
+
+			Result: <a href="https://twitter.com/share?url=http://dmatthams.co.uk/gwd/&text=Wowwee, this was made in Google Web Designer!" target="_blank">Tweet about GWD</a>
 
 
 			<br><br><br>
@@ -306,7 +307,7 @@ window.SS_PROXY_SERVER = "http://{{ALTERNATIVE_PROXY_URL}}/?url=";
 
 			All of this would be pointless if you couldn't freely use, examine, and modify my code.
 			<br>S-S is dedicated to the public domain using the <a target="_blank" href="http://unlicense.org/">Unlicense</a>.
-			With the code being open to the public, you can glance through my fairly short code (under 150 lines with whitespace and comments),
+			With the code being open to the public, you can glance through my fairly short code (under 200 lines with whitespace and comments),
 			and make sure it really <i>does</i> protect your privacy.
 
 <textarea class="code" style="height:300px; font-size:14px">
@@ -357,18 +358,22 @@ window.addEventListener("load",function(){
 
 			<br><br>
 
-			S-S isn't going to save privacy. But it's a simple way to make our web slightly safer from spies.
-			Every simple gesture counts
+			I'll be the first to admit, S-S isn't particularly complicated or clever or new.
+			But that's <i>exactly</i> the point. It doesn't take that much extra effort to make the web a safer place,
+			so we developers should do whatever we can to help, no matter how small.
 
+			<br><br>
+
+			Respect that damn privacy!
 
 			<br>
 
 
 
-			<hr><h1 style="font-size:30px; text-align:center">share this project on privacy, publicly</h1>
+			<hr><h1 style="font-size:30px; text-align:center">share this project for privacy, publicly</h1>
 			<div class="demo_content" style="margin:15px auto; font-size:20px">
 				<div class="s-s" data-type="facebook"></div>
-				<div class="s-s" data-type="twitter"></div>
+				<div class="s-s" data-type="twitter" data-text="Social Minus Spying by @ncasenmare. Open-source sharing buttons that respect your damn privacy."></div>
 			</div>
 
 			<br>
@@ -377,7 +382,10 @@ window.addEventListener("load",function(){
 				All code and text here has <a target="_blank" href="http://unlicense.org/">Zero Rights Reserved</a>.
 				Created by <a target="_blank" href="https://twitter.com/ncasenmare">@ncasenmare</a>.
 				<br>
-				I'm also making <a href="http://nothingtohide.cc/" target="_blank"><i>Nothing To Hide</i></a>, a surveillance state anti-stealth game.
+				I'm also making an open source HTML5 game called <a href="http://nothingtohide.cc/" target="_blank">Nothing To Hide</a>,
+				<br>
+				an anti-stealth game where you are your own watchdog.
+				<br>
 				<br>
 				Thank you for reading!
 			</div>
