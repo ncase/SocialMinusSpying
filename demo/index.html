@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 
+<!--
+
+OH GOD THIS HTML CODE IS ABSOLUTE CRAP
+PLEASE DON'T JUDGE MY CODING ABILITY BY THIS
+
+I SWEAR THE S-S.js LIBRARY IS MUCH BETTER, GO LOOK AT THAT INSTEAD
+
+-->
+
 <html>
 	<head>
 		<title>Social Minus Spying</title>
@@ -23,19 +32,16 @@
 			<h1>QUICK START</h1>
 			<br>
 
-			1) Download <a href="S-S.js" download>S-S.js</a>, and embed it anywhere on your web page.<br>
-			<div class="code">
-				&lt;script src=&quot;S-S.js&quot;&gt;&lt;/script&gt;
-			</div>
+			1) Download <a href="S-S.js" download>S-S.js</a>, and include it in the head of your web page.<br>
+<textarea class="code" style="height:25px">
+<script src="S-S.js"></script></textarea>
 			
 			<br>
 
 			2) Insert the following snippet where you want your social buttons:
-			<div class="code">
-				&lt;div class=&quot;s-s&quot; data-type=&quot;facebook&quot;&gt;&lt;/div&gt;
-				<br>
-				&lt;div class=&quot;s-s&quot; data-type=&quot;twitter&quot;&gt;&lt;/div&gt;
-			</div>
+<textarea class="code" style="height:50px">
+<div class="s-s" data-type="facebook"></div>
+<div class="s-s" data-type="twitter"></div></textarea>
 			
 			<br>
 
@@ -57,29 +63,16 @@
 
 
 
-			<hr><h1>HOW THEY PROTECT PRIVACY</h1><br>
 
-			I love sharing information! But I should have control over <i>what</i> I share.
-			
-			<br><br>
 
-			That control over your generosity is the difference between letting a friend crash at your place,
-			and them breaking into your apartment... then raiding your fridge for cookies, leaving a personalized ad for Oreos,
-			and exiting through a backdoor that they secretly installed in everyone's houses.
 
-			<br><br>
 
-			S-S lets you take that control back. How, you ask?
-			
-			<br><br>
 
-			1) Static share links
 
-			<br><br>
 
-			2) Proxy server calls
 
-			<br><br>
+
+
 
 
 
@@ -94,19 +87,14 @@
 			You can change the text and links of a share button simply by adding data- attributes to the HTML.
 			For example, this code...
 
-			<div class="code">
-				&lt;div class=&quot;s-s&quot;
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					data-type=&quot;twitter&quot;
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					data-link=&quot;http://www.catlateraldamage.com/&quot;
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					data-label=&quot;Talk about a CAT-ASTROPHE&quot;
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					data-text=&quot;A first-person destructive cat simulator&quot;&gt;
-				<br>
-				&lt;/div&gt;
-			</div>
+<textarea class="code" style="height:150px">
+<div class="s-s" 
+     data-type="twitter" 
+     data-link="http://www.catlateraldamage.com/" 
+     data-label="Talk about a CAT-ASTROPHE" 
+     data-text="A first-person destructive cat simulator"> 
+</div>
+</textarea>
 
 			... will give you this button.
 			<br><br>
@@ -129,27 +117,21 @@
 			you can directly modify its look simply by including a stylesheet!
 			(protip: give the buttons id's to change their styles individually)
 
-			<div class="code">
-				&lt;style&gt;
-				<br>
-				#please_dont_do_this{
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					font-family:&quot;Comic Sans MS&quot;;
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					border-radius: 50px;
-				<br>
-				}
-				<br>
-				#please_dont_do_this #ss_label{
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					background: #F9429E;
-				<br>
-				}
-				<br>
-				&lt;/style&gt;
-				<br>
-				&lt;div id=&quot;please_dont_do_this&quot; class=&quot;s-s&quot; data-type=&quot;facebook&quot;&gt;&lt;/div&gt;
-			</div>
+<textarea class="code" style="height:300px">
+<style>
+#please_dont_do_this{
+	font-family:"Comic Sans MS";
+	border-radius: 50px;
+}
+#please_dont_do_this #ss_label{
+	background: #F9429E;
+}
+</style>
+<div id="please_dont_do_this" class="s-s"
+	data-type="facebook"
+	data-link="https://en.wikipedia.org/wiki/Justin_Bieber">
+</div>
+</textarea>
 
 			which gives you... uh... this.
 			<br><br>
@@ -173,19 +155,22 @@
 
 			You can also pass in an HTML template as a data- attribute.
 			Here's a template for a very minimalist Twitter Share button.
-			(highlighted in the code for covenience)
 
-			<div class="code" style="color:#888">
-				&lt;div class=&quot;s-s&quot;
-					data-template=&quot;<span style="color:#fff">&lt;a target='_blank' href='https://twitter.com/share?url={{link}}&amp;text={{text}}'&gt;tweet&lt;/a&gt; ({{count}})</span>&quot;&gt;
-					data-type=&quot;twitter&quot;
-				&lt;/div&gt;
-			</div>
+<textarea class="code" style="font-size:13px; height:130px">
+<div class="s-s"
+	data-type="twitter"
+	data-text="Shake Vigorously"
+	data-link="http://www.staggeringbeauty.com/"
+	data-template="<a target='_blank' href='https://twitter.com/share?url={{link}}&text={{text}}'>tweet</a> ({{count}})">
+</div>
+</textarea>
 
 			<br>
 			The result:<br>
 			<div class="s-s"
 				data-type="twitter"
+				data-text="Shake Vigorously"
+				data-link="http://www.staggeringbeauty.com/"
 				data-template="<a target='_blank' href='https://twitter.com/share?url={{link}}&text={{text}}'>tweet</a> ({{count}})">
 			</div>
 			<br><br><br>
@@ -205,28 +190,20 @@
 			<br><br>
 			To show this in action, a button that calls an API that only returns the number "8".
 			The "API" in question is just <a target="_blank" href="http://pastebin.com/raw.php?i=eBHzdqUP">a JSON file I posted on Pastebin</a>.
-			To change the API's called, I create a new config object in the global object,
+			To change the requests, I create a new config object in the global object,
 			<span style="font-family:monospace">SS_SOCIAL_API</span>, like so:
 
-			<div class="code" style="font-size:13px">
-				&lt;script&gt;
-				<br>
-				window.SS_SOCIAL_API.stanley = {
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					template: &quot;&lt;button style='font-size:30px' onclick='alert({{count}})'&gt;{{label}}&lt;/button&gt;&quot;,
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					label: &quot;The Stanley Parable Demo&quot;,
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					requestURI: &quot;http://pastebin.com/raw.php?i=eBHzdqUP&amp;throwaway=&quot;,
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;
-					requestProperty: &quot;count&quot;
-				<br>
-				};
-				<br>
-				&lt;/script&gt;
-				<br>
-				&lt;div class=&quot;s-s&quot; data-type=&quot;stanley&quot;&gt;&lt;/div&gt;
-			</div>
+<textarea class="code" style="font-size:13px; height:150px;">
+<script>
+window.SS_SOCIAL_API.stanley = {
+	template: "<button style='font-size:30px' onclick='alert({{count}})'>{{label}}</button>",
+	label: "The Stanley Parable Demo",
+	requestURI: "http://pastebin.com/raw.php?i=eBHzdqUP&throwaway=",
+	requestProperty: "count"
+};
+</script>
+<div class="s-s" data-type="stanley"></div>
+</textarea>
 
 			<br>
 			The result:<br>
@@ -243,15 +220,167 @@
 			</div>
 
 
-			<hr><h1>NOW WHAT</h1><br>
 
-			UNCOPYRIGHTED
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+			<hr><h1>HOW IT WORKS</h1><br>
+
+			I'll be the first to admit, S-S isn't particularly complicated or clever or new.
+			But that's <i>exactly</i> the point. It doesn't take that much extra effort to make the web a safer place,
+			so we developers should do whatever we can to help, no matter how small.
+			
+			<br><br>
+
+			That's why I wanted to make S-S. And here's how it protects your privacy.
+			
+			<br><br>
+
+			<b>1) Proxy server calls</b>
 
 			<br><br>
 
-			Follow me!
-			I'm making Nothing To Hide, an open source game satirizing social media and the surveillance state.
-			It's an anti-stealth game, where you are your own watchman.
+			If you want to know how many times a given link has been Shared/Tweeted,
+			you can call the Facebook/Twitter APIs like so. (click links for example API calls)
+			<br><br>
+			Twitter: <a target="_blank" href="http://urls.api.twitter.com/1/urls/count.json?url=https://www.youtube.com/watch?v=vtkGtXtDlQA">
+				http://urls.api.twitter.com/1/urls/count.json?url={{URL}}</a>
+			<br>
+			Facebook: <a target="_blank" href="http://graph.facebook.com/?id=https://www.youtube.com/watch?v=vtkGtXtDlQA">
+				http://graph.facebook.com/?id={{URL}}</a>
+			<br><br>
+
+			S-S protects your privacy by calling these APIs through a proxy server.
+			This way, they can't even log your IP address!
+			By default, S-S uses <a href="http://jsonp.jit.su/" target="_blank">JSONProxy</a>. (open source, so you can run your own JSONProxy)
+			If you want, you can easily customize S-S to use a different CORS proxy:
+
+<textarea class="code" style="height:70px">
+<script>
+window.SS_PROXY_SERVER = "http://{{ALTERNATIVE_PROXY_URL}}/?url=";
+</script></textarea>
+
+			<br><br>
+
+			<b>2) Static share links</b>
+
+			<br><br>
+
+			These static links go to sharing pages for Twitter/Facebook.
+			Just a simple hyperlink.
+			No external iframe'd buttons. No Javascript libraries.
+			No way it can track you just by simply <i>being</i> on the web page.
+
+			<br><br>
+			Twitter: <a target="_blank" href="https://twitter.com/share?url=https://www.youtube.com/watch?v=vtkGtXtDlQA&text=The sequel to Don't Hug Me I'm Scared? It's about TIME!">
+			https://twitter.com/share?url={{link}}&text={{text}}</a>
+			<br>
+			Facebook: <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v=vtkGtXtDlQA&t=The sequel to Don't Hug Me I'm Scared? It's about TIME!">
+				https://www.facebook.com/sharer/sharer.php?u={{link}}&t={{text}}</a>
+			<br><br>
+
+			If you don't care about Share Counts, you can avoid using S-S altogether and just use these links by themselves.
+
+
+			<br><br><br>
+
+			<b>3) Being open & customizeable</b>
+
+			<br><br>
+
+			<i>Would you <a href="https://github.com/ncase/SocialMinusSpying" target="_blank">fork me?</a> I'd fork me.</i>
+
+			<br><br>
+
+			All of this would be pointless if you couldn't freely use, examine, and modify my code.
+			<br>S-S is dedicated to the public domain using the <a target="_blank" href="http://unlicense.org/">Unlicense</a>.
+			With the code being open to the public, you can glance through my fairly short code (under 150 lines with whitespace and comments),
+			and make sure it really <i>does</i> protect your privacy.
+
+<textarea class="code" style="height:300px; font-size:14px">
+// Initialize S-S only after the rest of the page loads
+window.addEventListener("load",function(){
+
+	// Add stylesheet to top
+	var style = document.createElement("style");
+	style.innerHTML = SS_STYLE;
+	document.head.appendChild(style);
+
+	// Convert all S-S divs to share buttons
+	var shareButtons = document.querySelectorAll(".s-s");
+	for(var i=0;i<shareButtons.length;i++){
+		convertToButton(shareButtons[i]);
+	}
+
+	// And, finally...
+	notifyTheNSA();
+
+},false);
+</textarea>
+
+			Yup. Nothing suspicious there.
+
+			<br>
+
+
+
+
+
+
+
+
+
+
+
+
+			<hr><h1>CONCLUSION</h1><br>
+
+			I love sharing information! But I should have control over <i>what</i> I share.
+			
+			<br><br>
+
+			That control over your generosity is the difference between letting a friend crash at your place,
+			and them breaking into your apartment... then raiding your fridge for cookies, leaving a personalized ad for Oreos,
+			and exiting through a backdoor that they secretly installed in everyone's houses.
+
+			<br><br>
+
+			S-S isn't going to save privacy. But it's a simple way to make our web slightly safer from spies.
+			Every simple gesture counts
+
+
+			<br>
+
+
+
+			<hr><h1 style="font-size:30px; text-align:center">share this project on privacy, publicly</h1>
+			<div class="demo_content" style="margin:15px auto; font-size:20px">
+				<div class="s-s" data-type="facebook"></div>
+				<div class="s-s" data-type="twitter"></div>
+			</div>
+
+			<br>
+
+			<div style="text-align:center; font-size:18px; color:#888; line-height:25px">
+				All code and text here has <a target="_blank" href="http://unlicense.org/">Zero Rights Reserved</a>.
+				Created by <a target="_blank" href="https://twitter.com/ncasenmare">@ncasenmare</a>.
+				<br>
+				I'm also making <a href="http://nothingtohide.cc/" target="_blank"><i>Nothing To Hide</i></a>, a surveillance state anti-stealth game.
+				<br>
+				Thank you for reading!
+			</div>
 
 
 		</div>
